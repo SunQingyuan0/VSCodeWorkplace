@@ -1,0 +1,1 @@
+  // memset(visit, 0, N * N * sizeof(int));

@@ -1,0 +1,85 @@
+MUL32    PROC     NEAR
+
+;***************************************************************
+
+;                       32 bit multiplication routine
+
+;                       multiplies DX:AX x CX:BX
+
+;                       returns 64 bit product in DX:AX:CX:BX
+
+;***************************************************************
+
+         PUSH     SI
+
+         PUSH     DI
+
+         MOV      SI,DX       ;save OP1HI in SI
+
+         MOV      DI,AX       ;save OP1LO in DI
+
+         MUL      BX          ;OP1L0 x OP2LO
+
+         PUSH     AX          ;save 1st (32 bit) pp. on stack
+
+         PUSH     DX
+
+;
+
+         MOV      AX,SI       ;OP1HI in AX
+
+         MUL      BX          ;OP1HI x OP2L0
+
+         POP      BX          ;add 2nd (48 bit) pp. to pp1
+
+         ADD      AX,BX
+
+         ADC      DX,0
+
+         PUSH     AX
+
+         MOV      BX,DX       ;pp1 + pp2 in BX:TOS:TOS+2
+
+;
+
+         MOV      AX,DI       ;OP1LO in AX
+
+         MUL      CX          ;OP1LO x OP2HI
+
+         POP      DI          ;add 3rd (48 bit) pp. to pp1 + pp2
+
+         ADD      DI,AX
+
+         PUSH     DI
+
+         MOV      DI,0
+
+         ADC      BX,DX
+
+         ADC      DI,0        ;pp1+pp2+pp3 in DI:BX:TOS:TOS+2
+
+;
+
+         MOV      AX,SI       ;OP1HI in AX
+
+         MUL      CX          ;OP1HI x OP2HI
+
+         ADD      AX,BX       ;add 4th (64 bit) pp. to pp1+pp2+pp3
+
+         ADC      DX,DI
+
+         POP      CX
+
+         POP      BX          ;final product in DX:AX:CX:BX
+
+;
+
+         POP      DI
+
+         POP      SI
+
+         RET
+
+MUL32    ENDP
+
+

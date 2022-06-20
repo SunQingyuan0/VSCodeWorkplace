@@ -1,0 +1,61 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[comma,square,super]{natbib}
+\usepackage{booktabs}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{url}   % 网页链接
+\usepackage[comma,square,super]{natbib}
+\usepackage{cleveref}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{supertabular}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\title{\textbf{报告0.0}}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand\headrulewidth{0pt}
+\begin{document}
+\date{}
+\maketitle
+\section{功能设想}
+\begin{itemize}
+    \item 道路中出现较近障碍物时，产品发送讯息至手机告知障碍物的距离信息，及时提醒避开障碍物
+    \item 所在区域交通信息网络联合。每当行经十字路口、交叉路口时，会告知此时的红绿灯状况
+    \item  内置微波传感器判判断道路中速度较快的物体，并通过app发出警报警示。
+    \item 内置 GPS 确定每时每刻的方位
+    \item 遭遇危险或身体不适可发送讯息至亲人
+\end{itemize}
+
+《基于可穿戴的智能盲人导航设计》李诗芸
+
+\section{设计模块}
+\subsection{环境检测}
+包括：四周障碍物大小与方位，地面凹陷情况，楼梯及电梯位置，其他行人方
+位，室内设施位置，室外斑马线、交通灯、交通指示牌等交通标志信息。
+\subsection{人机交互}
+人机界面的简单化，不是纯净，刻意简单的几何造型，而是去除各种不必要的
+装饰，去除各种干扰人们使用的因素，使得产品技术简单，功能明确，言简意赅的
+设计。简单的人机界面，更易于用户理解和记忆
+
+同时也要考虑雷达，云端，服务器与手机之间的逻辑
+《导盲机器人研究现状综述》武曌晗
+\section{原则}
+\begin{itemize}
+    \item 保障不同身体尺寸、姿势和行动能力的人群在不同状态下的安全性和便携性
+    \item 以多元化的方式传达必要的信息。考虑到不同群体的使用习惯和操作方式可以选用检测或扫描等功能，以及语音或震动等提醒方式
+    \item 在不同的体格，姿势，移动能力下，提供轻松的操作空间。
+    \item 适应不同情境的操作需求。在检测到障碍物时，会根据障碍物危险程度的不同，以不同的震动频率或者语音提醒。
+\end{itemize}
+
+《盲人助行产品的无障碍设计研究》尚琳琳
+\end{document}

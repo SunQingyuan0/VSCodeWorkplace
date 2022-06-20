@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp",
+        "cstdio": "cpp",
+        "algorithm": "cpp",
+        "iostream": "cpp",
+        "cstring": "cpp",
+        "map": "cpp"
+    }
+}
